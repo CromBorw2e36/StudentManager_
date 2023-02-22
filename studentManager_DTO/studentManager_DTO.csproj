@@ -75,12 +75,6 @@
     <Compile Include="TINHTRANGPHONG.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\studentManager_DAL\studentManager_DAL.csproj">
-      <Project>{b86332c0-7384-4f6d-8bf6-88e9dd0b81bf}</Project>
-      <Name>studentManager_DAL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

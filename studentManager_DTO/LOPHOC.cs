@@ -18,6 +18,7 @@ namespace studentManager_DTO
 
         [Key]
         [StringLength(5)]
+        [Display(ShortName = "Company", Name = "Company Name")]
         public string MALOPHOC { get; set; }
 
         [StringLength(5)]

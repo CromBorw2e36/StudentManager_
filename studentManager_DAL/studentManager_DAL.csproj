@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classRoomDAL.cs" />
     <Compile Include="dataAccessDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\studentManager_DTO\studentManager_DTO.csproj">
+      <Project>{565ed411-f760-49e8-84bb-12f4a2aa55b1}</Project>
+      <Name>studentManager_DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
