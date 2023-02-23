@@ -55,7 +55,9 @@
     <Compile Include="dataAccessDAL.cs" />
     <Compile Include="facultyDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="studentsDAL.cs" />
     <Compile Include="subjectDAL.cs" />
+    <Compile Include="teachDAL.cs" />
     <Compile Include="teacherDAL.cs" />
   </ItemGroup>
   <ItemGroup>

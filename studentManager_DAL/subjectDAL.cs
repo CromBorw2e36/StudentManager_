@@ -10,17 +10,41 @@ namespace studentManager_DAL
     public class subjectDAL
     {
 
+        public bool issetSubject(string id)
+        {
+            int count = 0;
+            using(dbStudentManager context = new dbStudentManager())
+            {
+                count = context.MONHOC.Where(x=> x.MAMON == id).Count();
+            }
+            return count != 0 ? true : false;
+        }
+
+        public string getID(string name)
+        {
+            string text = "";
+            using (dbStudentManager context = new dbStudentManager())
+            {
+                var query = context.MONHOC.Where(x=>x.TENMON == name).FirstOrDefault();
+                text = query.MAMON;
+            }
+            return text;
+        }
+
         public List<MONHOC> getAllSubject()
         {
             List<MONHOC> lst_ = new List<MONHOC>();
             using (dbStudentManager db = new dbStudentManager())
             {
-                var query = from u in db.MONHOC
-                            select u;
-                foreach (var item in query)
-                {
-                    lst_.Add(item);
-                }
+
+                var query = db.MONHOC.ToList();
+                lst_.AddRange(query);
+                //var query = from u in db.MONHOC
+                //            select u;
+                //foreach (var item in query)
+                //{
+                //    lst_.Add(item);
+                //}
             }
             return lst_;
         }
@@ -40,6 +64,21 @@ namespace studentManager_DAL
             }
         }
 
+        public void updSubject(MONHOC subject)
+        {
+            try
+            {
+                using (dbStudentManager context = new dbStudentManager())
+                {
+                    var item = context.MONHOC.Where(x=> x.MAMON == subject.MAMON).FirstOrDefault();
+                    item.TENMON = subject.TENMON;
+                    item.MAKHOAHOC = subject.MAKHOAHOC;
+                    item.HOCPHI = subject.HOCPHI;
+
+                    context.SaveChanges();
+                }
+            }catch(Exception ex) { Console.WriteLine(ex.ToString()); }
+        }
         public void deleteSubject(string mamonhoc)
         {
             try

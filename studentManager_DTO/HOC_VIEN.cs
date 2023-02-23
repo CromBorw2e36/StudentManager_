@@ -19,24 +19,22 @@ namespace studentManager_DTO
         [StringLength(5)]
         public string MAHOCVIEN { get; set; }
 
-        [Required]
         [StringLength(20)]
         public string HOHOCVIEN { get; set; }
 
-        [Required]
         [StringLength(20)]
         public string TENHOCVIEN { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime NGAYSINH { get; set; }
 
-        [Required]
+        
         [StringLength(100)]
         public string DIACHI { get; set; }
 
-        public int SDT { get; set; }
+        [StringLength(50)]
+        public string SDT { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string NGHENGHIEP { get; set; }
 

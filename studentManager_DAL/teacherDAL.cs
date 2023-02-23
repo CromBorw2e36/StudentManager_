@@ -24,5 +24,60 @@ namespace studentManager_DAL
             }
             return lst_;
         }
+
+        public void insertTecher(GIAO_VIEN GV)
+        {
+            try
+            {
+                using (dbStudentManager context = new dbStudentManager())
+                {
+                    context.GIAO_VIEN.Add(GV);
+                    context.SaveChanges();
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void uptTecher(GIAO_VIEN GV)
+        {
+            try
+            {
+                using (dbStudentManager context = new dbStudentManager())
+                {
+                    var query  = context.GIAO_VIEN.Where(x=> x.MAGIAOVIEN == GV.MAGIAOVIEN).FirstOrDefault();
+                    query.TENGIAOVIEN = GV.TENGIAOVIEN;
+                    query.HOGIAOVIEN = GV.HOGIAOVIEN;
+                    query.DIACHI = GV.DIACHI;
+                    query.NGAYSINH = GV.NGAYSINH;
+
+                    context.SaveChanges();
+                }
+            }catch(Exception ex) { Console.WriteLine(ex.ToString());}
+        }
+
+        public void delTeacher(string magiaovien)
+        {
+            try
+            {
+                using (dbStudentManager context = new dbStudentManager())
+                {
+                    var query = context.GIAO_VIEN.Where(x=>x.MAGIAOVIEN == magiaovien).FirstOrDefault();
+                    context.GIAO_VIEN.Remove(query);
+                    context.SaveChanges();
+                }
+            }catch(Exception ex) { Console.WriteLine(ex.ToString() ); }
+        }
+
+        public bool issetTecher(string magiaovien)
+        {
+            int count  = 0;
+            using (dbStudentManager context = new dbStudentManager())
+            {
+                count = context.GIAO_VIEN.Where(x=>x.MAGIAOVIEN == magiaovien).Count();
+            }
+            return count == 0 ? false : true;
+        }
     }
 }
