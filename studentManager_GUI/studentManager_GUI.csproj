@@ -43,6 +43,11 @@
     <Reference Include="DevExpress.Data.v21.2" />
     <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Export, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v21.2" />
     <Reference Include="DevExpress.Sparkline.v21.2.Core" />
     <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -53,9 +58,12 @@
     <Reference Include="DevExpress.XtraCharts.v21.2.Wizard, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v21.2" />
     <Reference Include="DevExpress.Printing.v21.2.Core" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -89,17 +97,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\subjectReport_.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\subjectReport_.Designer.cs">
+      <DependentUpon>subjectReport_.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\classRoom\ControlClassRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\classRoom\ControlClassRoom.Designer.cs">
       <DependentUpon>ControlClassRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\subject\subjectUI_.cs">
+    <Compile Include="UI\subjectControl\DANH SÁCH MÔN HỌC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\subjectControl\subjectUI_.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\subject\subjectUI_.Designer.cs">
+    <Compile Include="UI\subjectControl\subjectUI_.Designer.cs">
       <DependentUpon>subjectUI_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\teacherControl\teacherUI_.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\teacherControl\teacherUI_.Designer.cs">
+      <DependentUpon>teacherUI_.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -117,8 +140,14 @@
     <EmbeddedResource Include="UI\classRoom\ControlClassRoom.resx">
       <DependentUpon>ControlClassRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\subject\subjectUI_.resx">
+    <EmbeddedResource Include="UI\subjectControl\DANH SÁCH MÔN HỌC.resx">
+      <DependentUpon>DANH SÁCH MÔN HỌC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\subjectControl\subjectUI_.resx">
       <DependentUpon>subjectUI_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\teacherControl\teacherUI_.resx">
+      <DependentUpon>teacherUI_.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -141,6 +170,9 @@
       <Project>{565ed411-f760-49e8-84bb-12f4a2aa55b1}</Project>
       <Name>studentManager_DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\loadFrom\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
