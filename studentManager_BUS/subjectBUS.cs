@@ -15,5 +15,22 @@ namespace studentManager_BUS
         {
             return subjectDAL.getAllSubject();
         }
+
+        public void insertSubject(string mamon, string tenmon, string tenkhoa, int hocphi)
+        {
+            MONHOC MH = new MONHOC();
+            MH.MAMON = mamon;
+            MH.TENMON = tenmon;
+            MH.MAKHOAHOC = (new facultyDAL()).getID(tenkhoa);
+            MH.HOCPHI = hocphi;
+
+            (new subjectDAL()).insertSubject(MH);
+        }
+
+        public void deleteSubject(string mamon)
+        {
+            (new subjectDAL()).deleteSubject(mamon);
+        }
+
     }
 }

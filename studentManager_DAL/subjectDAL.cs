@@ -24,5 +24,37 @@ namespace studentManager_DAL
             }
             return lst_;
         }
+
+        public void insertSubject(MONHOC subject)
+        {
+            try
+            {
+                using(dbStudentManager dbContext = new dbStudentManager())
+                {
+                    dbContext.MONHOC.Add(subject);
+                    dbContext.SaveChanges();
+                }
+            }
+            catch(Exception ex) { 
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public void deleteSubject(string mamonhoc)
+        {
+            try
+            {
+                using (dbStudentManager dbContext = new dbStudentManager())
+                {
+                    var itemToRemove = dbContext.MONHOC.SingleOrDefault(x => x.MAMON == mamonhoc);
+                    dbContext.MONHOC.Remove(itemToRemove);
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
     }
 }
