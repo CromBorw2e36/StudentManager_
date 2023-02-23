@@ -27,5 +27,10 @@ namespace studentManager_BUS
             dh.MAMON = monhoc;
             (new teachDAL()).updTeach(dh, subjectOld);
         }
+
+        public void delTeach(string magiaovien)
+        {
+            (new teachDAL()).delTeach(magiaovien);
+        }
     }
 }

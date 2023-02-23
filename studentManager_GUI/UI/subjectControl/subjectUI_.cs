@@ -38,8 +38,8 @@ namespace studentManager_GUI.UI.subject
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            Console.WriteLine("Click : " + (sender as GridView).GetFocusedRowCellValue("MAMON").ToString());
-            Console.WriteLine("Click : " + (sender as GridView).GetFocusedRowCellValue("TENKHOAHOC").ToString());
+            //Console.WriteLine("Click : " + (sender as GridView).GetFocusedRowCellValue("MAMON").ToString());
+            //Console.WriteLine("Click : " + (sender as GridView).GetFocusedRowCellValue("TENKHOAHOC").ToString());
             comboBoxEdit1.SelectedItem = (sender as GridView).GetFocusedRowCellValue("TENKHOAHOC").ToString();
             textEdit1.Text = (sender as GridView).GetFocusedRowCellValue("MAMON").ToString();
             textEdit2.Text = (sender as GridView).GetFocusedRowCellValue("TENMON").ToString();

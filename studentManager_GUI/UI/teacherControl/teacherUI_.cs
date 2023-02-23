@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using studentManager_BUS;
 using studentManager_DTO;
 using System;
@@ -139,6 +140,26 @@ namespace studentManager_GUI.UI.teacherControl
                     (new teachBUS()).updTeach(magiaovien, monhoc, subjectOld);
                 }
             }
+            sqlDataSource1.FillAsync();
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            textEditMAGIAOVIEN.Text = (sender as GridView).GetFocusedRowCellValue("Mã giáo viên").ToString();
+            textEditHOGV.Text = (sender as GridView).GetFocusedRowCellValue("Họ giáo viên").ToString();
+            textEditTEN.Text = (sender as GridView).GetFocusedRowCellValue("Tên giáo viên").ToString();
+            textEditDIACHI.Text = (sender as GridView).GetFocusedRowCellValue("Địa chỉ").ToString();
+            //textEditSDT.Text = (sender as GridView).GetFocusedRowCellValue("Số điện thoại").ToString();
+            try
+            {
+                dateEditNGAYSINH.DateTime = DateTime.Parse((sender as GridView).GetFocusedRowCellValue("Ngày sinh").ToString());
+            }
+            catch (Exception ex)
+            {
+                dateEditNGAYSINH.DateTime = DateTime.Now;
+            }
+
+            comboEditMONHOC.SelectedItem = (sender as GridView).GetFocusedRowCellValue("Tên môn học").ToString();
         }
     }
 }
