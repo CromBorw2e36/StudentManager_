@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace studentManager_DTO
 {
-    public partial class studentManager_DB : DbContext
+    public partial class dbStudentManager : DbContext
     {
-        public studentManager_DB()
-            : base("name=studentManager_DB1")
+        public dbStudentManager()
+            : base("data source=.;initial catalog=QLHV;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework")
         {
         }
 

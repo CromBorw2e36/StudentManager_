@@ -14,34 +14,44 @@ namespace studentManager_DAL
 
         private string getAll = "SELECT * FROM LOPHOC";
 
+
+        public bool checkIsSet(string malophoc)
+        {
+            int count = 0;
+
+            using (dbStudentManager dk = new dbStudentManager())
+            {
+                var query = from u in dk.LOPHOC
+                               where u.MALOPHOC == malophoc
+                               select u;
+                count = query.Count();
+            }
+
+            // Tồn tại đối tượng này 
+            if (count != 0) return false;
+            return true;
+        }
+
         public List<LOPHOC> getAllClass ()
         {
-            openConnect();
-            SqlCommand cmd = new SqlCommand(getAll, connect);
-            //cmd.CommandType = System.Data.CommandType.Text;
-            //cmd.CommandText = getAll;
-            //cmd.Connection = connect;
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            List<LOPHOC> lst = new List<LOPHOC>();
+            using (dbStudentManager dk = new dbStudentManager())
             {
-                string maLopHoc = reader.GetString(0);
-                string maMon = reader.GetString(1);
-                int soluong = reader.GetInt32(2);
-                DateTime ngayBD = reader.GetDateTime(3);
-                DateTime ngayKT = reader.GetDateTime(4);
-                bool dakhoa = reader.GetBoolean(5);
-                LOPHOC lopHoc = new LOPHOC();
-                lopHoc.MALOPHOC = maLopHoc;
-                lopHoc.MAMON = maMon;
-                lopHoc.SOLUONG = soluong;
-                lopHoc.NGAYBD = ngayBD;
-                lopHoc.NGAYKT = ngayKT;
-                lopHoc.DAKHOA = dakhoa;
-                lstLopHoc.Add(lopHoc);
+                var query = from u in dk.LOPHOC
+                            select u;
+                foreach(var row in query)
+                {
+                    LOPHOC lop = new LOPHOC();
+                    lop.MALOPHOC = row.MALOPHOC;
+                    lop.MONHOC = row.MONHOC;
+                    lop.SOLUONG = row.SOLUONG;
+                    lop.DAKHOA = row.DAKHOA;
+                    lop.NGAYBD = row.NGAYBD;
+                    lop.NGAYKT = row.NGAYKT;
+                    lst.Add(lop);
+                }
             }
-            reader.Close();
-            closeConnect();
-            return lstLopHoc;
+            return lst;
         }
 
 
@@ -49,17 +59,16 @@ namespace studentManager_DAL
         {
             try
             {
-                string query = String.Format("INSERT INTO LOPHOC VALUES {0}, {1}, {2}, {3}, {4}, {5}",
-                LH.MALOPHOC, LH.MONHOC, LH.SOLUONG, LH.NGAYBD, LH.NGAYKT, LH.DAKHOA);
-                openConnect();
-                SqlCommand cmd = new SqlCommand(query, connect);
-                closeConnect();
+                using (dbStudentManager dk = new dbStudentManager())
+                {
+                    dk.LOPHOC.Add(LH);
+
+                    dk.SaveChanges();
+                }
                 return true;
-            }
-            catch(Exception ex)
+            }catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                return false;
+                return false;   
             }
         }
         

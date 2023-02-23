@@ -19,17 +19,14 @@ namespace studentManager_DTO
         [StringLength(5)]
         public string MABL { get; set; }
 
-        [Required]
         [StringLength(100)]
         public string NGAYBL { get; set; }
 
-        [Required]
         [StringLength(200)]
         public string NOIDUNG { get; set; }
 
         public double? SOTIEN { get; set; }
 
-        [Required]
         [StringLength(100)]
         public string BANGCHU { get; set; }
 

@@ -117,4 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery2.Sql" xml:space="preserve">
+    <value>SELECT 
+	LOPHOC.MALOPHOC,
+	LOPHOC.SOLUONG,
+	LOPHOC.NGAYBD,
+	LOPHOC.NGAYKT,
+	LOPHOC.DAKHOA,
+	LOPHOC.MAMON,
+	MONHOC.TENMON,
+	PHONGHOC.MAPHONG,
+	PHONGHOC.TENPHONG,
+	GIAO_VIEN.MAGIAOVIEN,
+	GIAO_VIEN.HOGIAOVIEN + ' ' + GIAO_VIEN.TENGIAOVIEN as GIAOVIEN
+FROM 
+	LOPHOC, MONHOC, TINHTRANGPHONG, PHONGHOC, PHANCONG, GIAO_VIEN
+WHERE 
+	LOPHOC.MAMON = MONHOC.MAMON
+	AND LOPHOC.MALOPHOC = TINHTRANGPHONG.MALOPHOC
+	AND TINHTRANGPHONG.MAPHONG = PHONGHOC.MAPHONG
+	AND LOPHOC.MALOPHOC = PHANCONG.MALOPHOC
+	AND PHANCONG.MAGIAOVIEN = GIAO_VIEN.MAGIAOVIEN</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iTUFMT1BIT0MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU09MVU9ORyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik5HQVlCRCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9Ik5HQVlLVCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IkRBS0hPQSIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iTUFNT04iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVEVOTU9OIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1BUEhPTkciIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVEVOUEhPTkciIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTUFHSUFPVklFTiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJHSUFPVklFTiIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
+  <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>180, 17</value>
+  </metadata>
 </root>

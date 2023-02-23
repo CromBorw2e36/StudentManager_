@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraBars;
 using studentManager_GUI.UI;
+using studentManager_GUI.UI.classRoom;
+using studentManager_GUI.UI.subject;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,12 +20,12 @@ namespace studentManager_GUI
             InitializeComponent();
         }
 
-        classRoomUI classRoom = null;
+        ControlClassRoom classRoom = null;
         private void accordionControlElement7_Click(object sender, EventArgs e)
         {
             if(classRoom == null)
             {
-                classRoom = new classRoomUI();
+                classRoom = new ControlClassRoom();
                 classRoom.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(classRoom);
                 classRoom.BringToFront();
@@ -31,6 +33,22 @@ namespace studentManager_GUI
             else
             {
                 classRoom.BringToFront();
+            }
+        }
+
+        subjectUI_ subjectUI_ = null;
+        private void accordionControlElement9_Click(object sender, EventArgs e)
+        {
+            if (subjectUI_ == null)
+            {
+                subjectUI_ = new subjectUI_();
+                subjectUI_.Dock = DockStyle.Fill;
+                fluentDesignFormContainer1.Controls.Add(subjectUI_);
+                subjectUI_.BringToFront();
+            }
+            else
+            {
+                subjectUI_.BringToFront();
             }
         }
     }

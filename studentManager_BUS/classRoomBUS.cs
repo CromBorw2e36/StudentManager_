@@ -14,7 +14,7 @@ namespace studentManager_BUS
 
         public LOPHOC setClassRoom(string malophoc, string mamon, int soluong, DateTime ngaybd, DateTime ngaykt, bool dakhoa)
         {
-           LOPHOC LH = new LOPHOC();
+            LOPHOC LH = new LOPHOC();
             LH.MALOPHOC = malophoc;
             LH.MAMON = mamon;
             LH.SOLUONG= soluong;
@@ -66,6 +66,11 @@ namespace studentManager_BUS
             {
                 Console.WriteLine("Lệnh chưa được thực hiện");
             }
+        }
+
+        public bool checkLH(string malophoc)
+        {
+            return classRoomDAL.checkIsSet(malophoc);
         }
 
     }
