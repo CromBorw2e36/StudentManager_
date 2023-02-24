@@ -18,15 +18,12 @@ namespace studentManager_DTO
         [StringLength(5)]
         public string MAKHOAHOC { get; set; }
 
-        [Required]
-        [StringLength(5)]
+        [StringLength(254)]
         public string TENKHOAHOC { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime NGAYBD { get; set; }
+        public DateTime? NGAYBD { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime NGAYKT { get; set; }
+        public DateTime? NGAYKT { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MONHOC> MONHOC { get; set; }
