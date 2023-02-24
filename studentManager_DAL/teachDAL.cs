@@ -15,10 +15,14 @@ namespace studentManager_DAL
             {
                 using (dbStudentManager context = new dbStudentManager())
                 {
-                    context.DAY_HOC.Add(dh);
+
                     //var queryS = context.GIAO_VIEN.Where(x => x.MAGIAOVIEN == dh.MAGIAOVIEN).FirstOrDefault();
-                    //var queryR = context.DAY_HOC.Where(x => x.MAGIAOVIEN == dh.MAGIAOVIEN);
-                    context.SaveChanges();
+                    var queryR = context.DAY_HOC.Where(x => x.MAGIAOVIEN == dh.MAGIAOVIEN && x.MAMON == dh.MAMON).FirstOrDefault();
+                    if(queryR == null)
+                    {
+                        context.DAY_HOC.Add(dh);
+                        context.SaveChanges();
+                    }
                 }
             }catch (Exception ex)
             {
@@ -38,12 +42,8 @@ namespace studentManager_DAL
                     {
                         context.DAY_HOC.Remove(query);
                         context.DAY_HOC.Add(dh);
+                        context.SaveChanges();
                     }
-                    else
-                    {
-                        context.DAY_HOC.Add(dh);
-                    }
-                    context.SaveChanges();
                 }
             }catch(Exception ex)
             {
@@ -65,8 +65,8 @@ namespace studentManager_DAL
                         item.MAMON = "W4Y9D";
                         lst_.Add(item);
                     }
-                    context.DAY_HOC.AddRange(lst_);
-                    context.DAY_HOC.RemoveRange(query);
+                    //context.DAY_HOC.RemoveRange(query);
+                    //context.DAY_HOC.AddRange(lst_);
                     context.SaveChanges();
                 }
             }

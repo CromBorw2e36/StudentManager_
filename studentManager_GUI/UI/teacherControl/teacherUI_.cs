@@ -33,7 +33,6 @@ namespace studentManager_GUI.UI.teacherControl
 
             comboEditMONHOC.Properties.Items.AddRange(lst_subject);
             comboEditMONHOC.SelectedIndex = 0;
-            subjectOld = comboEditMONHOC.Text;
         }
 
         public teacherUI_()
@@ -47,7 +46,7 @@ namespace studentManager_GUI.UI.teacherControl
             //** Tạo mới ID
             string textID = (new _RandomID()).RandomString(5);
             textEditMAGIAOVIEN.Text = textID;
-
+            subjectOld = comboEditMONHOC.Properties.Items[0].ToString();
         }
 
 
@@ -148,6 +147,7 @@ namespace studentManager_GUI.UI.teacherControl
                     // ** update vào db giaovien
                     teacherBUS.updTeacher(magiaovien, hogiaovien, tengiaovien, ngaysinh, diachi);
                     // ** update vào db dayhoc
+                    //if(subjectOld == "") subjectOld = comboEditMONHOC.SelectedItem.ToString();
                     (new teachBUS()).updTeach(magiaovien, monhoc, subjectOld);
                     sqlDataSource1.FillAsync();
                     //** Tạo mới ID
@@ -173,7 +173,7 @@ namespace studentManager_GUI.UI.teacherControl
             {
                 dateEditNGAYSINH.DateTime = DateTime.Now;
             }
-
+            subjectOld = (sender as GridView).GetFocusedRowCellValue("Tên môn học").ToString();
             comboEditMONHOC.SelectedItem = (sender as GridView).GetFocusedRowCellValue("Tên môn học").ToString();
         }
 
@@ -188,6 +188,7 @@ namespace studentManager_GUI.UI.teacherControl
                 {
                     teacher_.delTeacher(magiaovien);
                     teach_.delTeach(magiaovien);
+                    sqlDataSource1.FillAsync();
                 }
             }catch(Exception ex)
             {

@@ -29,6 +29,7 @@ namespace studentManager_BUS
             dh.MAMON = (new subjectBUS()).getID(monhoc);
             string textId = (new _RandomID()).RandomString(10);
             dh.MADAYHOC = textId;
+            subjectOld = (new subjectBUS()).getID(subjectOld);
             (new teachDAL()).updTeach(dh, subjectOld);
         }
 
