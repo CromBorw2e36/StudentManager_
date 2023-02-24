@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace studentManager_GUI.Report
 {
-    public partial class teacherReport_ : DevExpress.XtraReports.UI.XtraReport
+    public partial class teacherReport_ : studentManager_GUI.DANHSACHGIAOVIEN
     {
         public teacherReport_()
         {

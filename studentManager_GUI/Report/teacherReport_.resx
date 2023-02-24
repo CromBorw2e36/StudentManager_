@@ -117,4 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "GIAO_VIEN"."MAGIAOVIEN" as "Mã giáo viên",
+       "GIAO_VIEN"."HOGIAOVIEN" + ' ' +
+       "GIAO_VIEN"."TENGIAOVIEN" as "Họ và tên" ,
+       "GIAO_VIEN"."NGAYSINH" as "Ngày sinh",
+       "GIAO_VIEN"."DIACHI" as "Địa chỉ",
+       "MONHOC"."TENMON" as "Tên môn học"
+  from (("dbo"."GIAO_VIEN" "GIAO_VIEN"
+  inner join "dbo"."DAY_HOC" "DAY_HOC"
+       on ("DAY_HOC"."MAGIAOVIEN" = "GIAO_VIEN"."MAGIAOVIEN"))
+  inner join "dbo"."MONHOC" "MONHOC"
+       on ("MONHOC"."MAMON" = "DAY_HOC"."MAMON"))</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iTcOjIGdpw6FvIHZpw6puIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikjhu40gdsOgIHTDqm4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTmfDoHkgc2luaCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IsSQ4buLYSBjaOG7iSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUw6puIG3DtG4gaOG7jWMiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
+  <metadata name="xtraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 60</value>
+  </metadata>
 </root>

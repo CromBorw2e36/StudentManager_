@@ -34,6 +34,9 @@ namespace studentManager_GUI.UI.subject
             comboBoxEdit1.SelectedIndex = 0;
 
             sqlDataSource1.Fill();
+
+            string textID = (new _RandomID()).RandomString(5).ToString();
+            textEdit1.Text = textID;
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -95,41 +98,44 @@ namespace studentManager_GUI.UI.subject
             }
         }
 
-        private static Random random = new Random();
-
-        public static string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-                .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            textEdit1.Text = RandomString(5);
+            string textID = (new _RandomID()).RandomString(5).ToString();
+            textEdit1.Text = textID;
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             string mamon = textEdit1.Text.ToString();
-            if (mamon.Length <= 5 &&
-               mamon.Length > 0)
+
+            if (!mamon.Equals("W4Y9D"))
             {
-                DialogResult result = MessageBox.Show("Xác nhận xóa?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (result == DialogResult.OK)
+                if (mamon.Length <= 5 &&
+               mamon.Length > 0)
                 {
-                    (new subjectBUS()).deleteSubject(mamon);
-                    sqlDataSource1.Fill();
+                    DialogResult result = MessageBox.Show("Xác nhận xóa?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (result == DialogResult.OK)
+                    {
+                        (new subjectBUS()).deleteSubject(mamon);
+                        (new teachBUS()).updTeach_2(mamon);
+                        sqlDataSource1.Fill();
+                    }
+                }
+                else if (mamon.Length == 0)
+                {
+                    MessageBox.Show("Vui lòng nhập mã môn", "Lỗi");
+                }
+                else if (mamon.Length > 5)
+                {
+                    MessageBox.Show("Vui lòng nhập chính xác mã môn", "Lỗi");
                 }
             }
-            else if(mamon.Length == 0)
+            else
             {
-                MessageBox.Show("Vui lòng nhập mã môn", "Lỗi");
+                MessageBox.Show("Không thể xóa trạng thái mặc định", "Ghi chú", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if(mamon.Length > 5)
-            {
-                MessageBox.Show("Vui lòng nhập chính xác mã môn", "Lỗi");
-            }
+
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

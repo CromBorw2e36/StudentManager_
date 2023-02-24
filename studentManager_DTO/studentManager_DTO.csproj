@@ -58,6 +58,7 @@
     <Compile Include="DANG_KI.cs" />
     <Compile Include="DAY_HOC.cs" />
     <Compile Include="dbStudentManager.cs" />
+    <Compile Include="dbStudentManager_.cs" />
     <Compile Include="DIEN_GIAM_PHI.cs" />
     <Compile Include="GIAM_PHI.cs" />
     <Compile Include="GIAO_VIEN.cs" />

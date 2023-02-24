@@ -29,6 +29,8 @@ namespace studentManager_DAL
         {
             try
             {
+                //string date = GV.NGAYSINH.ToString("dd/MM/yyyy");
+                //GV.NGAYSINH = DateTime.Parse(date);
                 using (dbStudentManager context = new dbStudentManager())
                 {
                     context.GIAO_VIEN.Add(GV);
@@ -36,7 +38,7 @@ namespace studentManager_DAL
                 }
             }catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("-----------------" + ex.Message);
             }
         }
 

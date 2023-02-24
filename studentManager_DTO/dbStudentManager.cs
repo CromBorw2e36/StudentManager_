@@ -58,10 +58,10 @@ namespace studentManager_DTO
                 .WithRequired(e => e.DIEN_GIAM_PHI)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<GIAO_VIEN>()
-                .HasMany(e => e.DAY_HOC)
-                .WithRequired(e => e.GIAO_VIEN)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<GIAO_VIEN>()
+            //    .HasMany(e => e.DAY_HOC)
+            //    .WithRequired(e => e.GIAO_VIEN)
+            //    .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<HOC_VIEN>()
                 .HasMany(e => e.THI)
@@ -91,6 +91,19 @@ namespace studentManager_DTO
                 .HasMany(e => e.THI)
                 .WithRequired(e => e.PHONGHOC)
                 .WillCascadeOnDelete(false);
+
+            // **********
+            modelBuilder.Entity<DAY_HOC>()
+                .Property(e => e.MAMON)
+                .IsFixedLength();
+
+            modelBuilder.Entity<DAY_HOC>()
+                .Property(e => e.MAGIAOVIEN)
+                .IsFixedLength();
+
+            modelBuilder.Entity<DAY_HOC>()
+                .Property(e => e.MADAYHOC)
+                .IsFixedLength();
         }
     }
 }

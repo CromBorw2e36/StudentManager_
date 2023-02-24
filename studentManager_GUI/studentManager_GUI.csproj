@@ -146,9 +146,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report\teacherReport_.resx">
-      <DependentUpon>teacherReport_.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\classRoom\ControlClassRoom.resx">
       <DependentUpon>ControlClassRoom.cs</DependentUpon>
     </EmbeddedResource>
