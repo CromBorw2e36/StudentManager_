@@ -48,7 +48,8 @@
     <Compile Include="subjectBUS.cs" />
     <Compile Include="teachBUS.cs" />
     <Compile Include="teacherBUS.cs" />
-    <Compile Include="Validate.cs" />
+    <Compile Include="_Validate.cs" />
+    <Compile Include="_RandomID.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\studentManager_DAL\studentManager_DAL.csproj">

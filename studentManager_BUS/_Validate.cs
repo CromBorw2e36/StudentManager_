@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace studentManager_BUS
 {
-    public class Validate
+    public class _Validate
     {
         public int ValidateText(string text, int min = 1, int max = 999) {
             if (text.Length >= min &&

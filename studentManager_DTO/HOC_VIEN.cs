@@ -26,9 +26,8 @@ namespace studentManager_DTO
         public string TENHOCVIEN { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime NGAYSINH { get; set; }
+        public DateTime? NGAYSINH { get; set; }
 
-        
         [StringLength(100)]
         public string DIACHI { get; set; }
 

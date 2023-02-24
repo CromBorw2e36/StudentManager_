@@ -103,6 +103,12 @@
     <Compile Include="Report\subjectReport_.Designer.cs">
       <DependentUpon>subjectReport_.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\teacherReport_.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\teacherReport_.Designer.cs">
+      <DependentUpon>teacherReport_.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\classRoom\ControlClassRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </Compile>
     <Compile Include="UI\subjectControl\subjectUI_.Designer.cs">
       <DependentUpon>subjectUI_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\teacherControl\DANH SACH GIAO VIEN.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\teacherControl\teacherUI_.cs">
       <SubType>UserControl</SubType>
@@ -145,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\subjectControl\subjectUI_.resx">
       <DependentUpon>subjectUI_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\teacherControl\DANH SACH GIAO VIEN.resx">
+      <DependentUpon>DANH SACH GIAO VIEN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\teacherControl\teacherUI_.resx">
       <DependentUpon>teacherUI_.cs</DependentUpon>

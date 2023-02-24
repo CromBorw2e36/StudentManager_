@@ -12,7 +12,6 @@ namespace studentManager_DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PHONGHOC()
         {
-            TINHTRANGPHONG = new HashSet<TINHTRANGPHONG>();
             THI = new HashSet<THI>();
         }
 
@@ -20,12 +19,8 @@ namespace studentManager_DTO
         [StringLength(5)]
         public string MAPHONG { get; set; }
 
-        [Required]
         [StringLength(30)]
         public string TENPHONG { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TINHTRANGPHONG> TINHTRANGPHONG { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<THI> THI { get; set; }

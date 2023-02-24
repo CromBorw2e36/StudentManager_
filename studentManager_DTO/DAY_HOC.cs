@@ -8,14 +8,14 @@ namespace studentManager_DTO
 
     public partial class DAY_HOC
     {
-        [Key]
         [StringLength(5)]
         public string MAMON { get; set; }
 
-        [Required]
         [StringLength(5)]
         public string MAGIAOVIEN { get; set; }
 
-        public virtual GIAO_VIEN GIAO_VIEN { get; set; }
+        [Key]
+        [StringLength(10)]
+        public string MADAYHOC { get; set; }
     }
 }

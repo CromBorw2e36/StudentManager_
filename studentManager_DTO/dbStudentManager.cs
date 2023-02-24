@@ -25,11 +25,8 @@ namespace studentManager_DTO
         public virtual DbSet<LOAIPHONG> LOAIPHONG { get; set; }
         public virtual DbSet<LOPHOC> LOPHOC { get; set; }
         public virtual DbSet<MONHOC> MONHOC { get; set; }
-        public virtual DbSet<PHANCONG> PHANCONG { get; set; }
         public virtual DbSet<PHONGHOC> PHONGHOC { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<THI> THI { get; set; }
-        public virtual DbSet<TINHTRANGPHONG> TINHTRANGPHONG { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -43,25 +40,26 @@ namespace studentManager_DTO
                 .WithMany(e => e.BIEN_LAI)
                 .Map(m => m.ToTable("XUAT").MapLeftKey("MABL").MapRightKey("MAHOCVIEN"));
 
-            modelBuilder.Entity<CA_HOC>()
-                .HasMany(e => e.PHANCONG)
-                .WithRequired(e => e.CA_HOC)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<DAY_HOC>()
+                .Property(e => e.MAMON)
+                .IsFixedLength();
 
-            modelBuilder.Entity<CA_HOC>()
-                .HasMany(e => e.TINHTRANGPHONG)
-                .WithRequired(e => e.CA_HOC)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<DAY_HOC>()
+                .Property(e => e.MAGIAOVIEN)
+                .IsFixedLength();
+
+            modelBuilder.Entity<DAY_HOC>()
+                .Property(e => e.MADAYHOC)
+                .IsFixedLength();
 
             modelBuilder.Entity<DIEN_GIAM_PHI>()
                 .HasMany(e => e.GIAM_PHI)
                 .WithRequired(e => e.DIEN_GIAM_PHI)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<GIAO_VIEN>()
-                .HasMany(e => e.DAY_HOC)
-                .WithRequired(e => e.GIAO_VIEN)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<HOC_VIEN>()
+                .Property(e => e.SDT)
+                .IsUnicode(false);
 
             modelBuilder.Entity<HOC_VIEN>()
                 .HasMany(e => e.THI)
@@ -75,16 +73,6 @@ namespace studentManager_DTO
             modelBuilder.Entity<KHOA_HOC>()
                 .HasMany(e => e.MONHOC)
                 .WithRequired(e => e.KHOA_HOC)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<LOPHOC>()
-                .HasMany(e => e.TINHTRANGPHONG)
-                .WithRequired(e => e.LOPHOC)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<PHONGHOC>()
-                .HasMany(e => e.TINHTRANGPHONG)
-                .WithRequired(e => e.PHONGHOC)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PHONGHOC>()
