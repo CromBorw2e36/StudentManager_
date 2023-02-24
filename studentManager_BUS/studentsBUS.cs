@@ -55,6 +55,10 @@ namespace studentManager_BUS
         {
             return studentsDAL.issetStudents(mahocvien);
         }
-
+        
+        public int counterStudents()
+        {
+            return studentsDAL.CounterStudent();
+        }
     }
 }

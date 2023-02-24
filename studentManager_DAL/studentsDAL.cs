@@ -91,5 +91,15 @@ namespace studentManager_DAL
                 return false;
             }
         }
+
+        public int CounterStudent()
+        {
+            int counter = 0;
+            using(dbStudentManager context = new dbStudentManager())
+            {
+                counter = context.HOC_VIEN.Count();
+            }
+            return counter;
+        }
     }
 }

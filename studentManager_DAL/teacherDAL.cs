@@ -81,5 +81,15 @@ namespace studentManager_DAL
             }
             return count == 0 ? false : true;
         }
+
+        public int CounterTeacher()
+        {
+            int counter = 0;
+            using(dbStudentManager context = new dbStudentManager())
+            {
+                counter = context.GIAO_VIEN.Count();
+            }
+            return counter;
+        }
     }
 }

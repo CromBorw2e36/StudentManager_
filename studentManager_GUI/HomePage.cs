@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraBars;
 using studentManager_GUI.UI;
 using studentManager_GUI.UI.classRoom;
+using studentManager_GUI.UI.homPageControl;
 using studentManager_GUI.UI.studentsControl;
 using studentManager_GUI.UI.subject;
 using studentManager_GUI.UI.teacherControl;
@@ -17,9 +18,22 @@ namespace studentManager_GUI
 {
     public partial class HomePage : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+        homePageControl homePageControl = null;
         public HomePage()
         {
             InitializeComponent();
+
+            if (homePageControl == null)
+            {
+                homePageControl = new homePageControl();
+                homePageControl.Dock = DockStyle.Fill;
+                fluentDesignFormContainer1.Controls.Add(homePageControl);
+                homePageControl.BringToFront();
+            }
+            else
+            {
+                homePageControl.BringToFront();
+            }
         }
 
         ControlClassRoom classRoom = null;
@@ -100,12 +114,30 @@ namespace studentManager_GUI
 
         private void accordionControlElement2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void accordionControlElement1_Click(object sender, EventArgs e)
         {
             this.Text = "Trang chủ";
+            if (homePageControl == null)
+            {
+                homePageControl = new homePageControl();
+                homePageControl.Dock = DockStyle.Fill;
+                fluentDesignFormContainer1.Controls.Add(homePageControl);
+                homePageControl.BringToFront();
+            }
+            else
+            {
+                homePageControl = new homePageControl();
+                homePageControl.Dock = DockStyle.Fill;
+                fluentDesignFormContainer1.Controls.Add(homePageControl);
+                homePageControl.BringToFront();
+            }
+        }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
 
         }
     }
