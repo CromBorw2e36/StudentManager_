@@ -36,6 +36,8 @@ namespace studentManager_GUI
             {
                 classRoom.BringToFront();
             }
+            this.Text = "Trang chủ - Quản lý lớp học";
+
         }
 
         subjectUI_ subjectUI_ = null;
@@ -52,6 +54,8 @@ namespace studentManager_GUI
             {
                 subjectUI_.BringToFront();
             }
+            this.Text = "Trang chủ - Quản lý môn học";
+
         }
 
         teacherUI_ teacherUI_ = null;
@@ -68,6 +72,8 @@ namespace studentManager_GUI
             {
                 teacherUI_.BringToFront();
             }
+            this.Text = "Trang chủ - Quản lý giáo viên";
+
         }
 
         studentsUI_ studentsUI_ = null;
@@ -84,6 +90,23 @@ namespace studentManager_GUI
             {
                 studentsUI_.BringToFront();
             }
+            this.Text = "Trang chủ - Quản lý học viên"; 
+        }
+
+        private void accordionControlElement10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement1_Click(object sender, EventArgs e)
+        {
+            this.Text = "Trang chủ";
+
         }
     }
 }

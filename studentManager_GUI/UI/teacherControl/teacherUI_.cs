@@ -124,10 +124,10 @@ namespace studentManager_GUI.UI.teacherControl
                 kiểm tra nếu giáo viên không tồn tại thì *thêm mới;
                 nếu giáo viên tồn tại thì *cập nhật
             */
-            if (!teacherBUS.issetTeacher(magiaovien))
+            if(checkInput(magiaovien, hogiaovien, tengiaovien, ngaysinh,
+                    diachi, monhoc))
             {
-                if (checkInput(magiaovien, hogiaovien, tengiaovien, ngaysinh,
-                    diachi, monhoc));
+                if (!teacherBUS.issetTeacher(magiaovien))
                 {
                     // ** insert vào db giaovien
                     teacherBUS.insTeacher(magiaovien, hogiaovien, tengiaovien, ngaysinh, diachi);
@@ -138,11 +138,7 @@ namespace studentManager_GUI.UI.teacherControl
                     string textID = (new _RandomID()).RandomString(5);
                     textEditMAGIAOVIEN.Text = textID;
                 }
-            }
-            else
-            {
-                if (checkInput(magiaovien, hogiaovien, tengiaovien, ngaysinh,
-                     diachi, monhoc));
+                else
                 {
                     // ** update vào db giaovien
                     teacherBUS.updTeacher(magiaovien, hogiaovien, tengiaovien, ngaysinh, diachi);
@@ -155,6 +151,7 @@ namespace studentManager_GUI.UI.teacherControl
                     textEditMAGIAOVIEN.Text = textID;
                 }
             }
+            
             
         }
 
