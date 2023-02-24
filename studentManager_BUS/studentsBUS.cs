@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace studentManager_BUS
 {
-    public class students
+    public class studentsBUS
     {
         studentsDAL studentsDAL = new studentsDAL();
         public List<HOC_VIEN> getAllStudents()

@@ -51,6 +51,7 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.dateEditNGAYSINH = new DevExpress.XtraEditors.DateEdit();
+            this.btnRandID = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -72,12 +73,11 @@
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.reportGenerator2 = new DevExpress.XtraReports.ReportGeneration.ReportGenerator(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.btnRandID = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -110,10 +110,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -331,6 +331,17 @@
             this.dateEditNGAYSINH.Size = new System.Drawing.Size(146, 22);
             this.dateEditNGAYSINH.StyleController = this.layoutControl1;
             this.dateEditNGAYSINH.TabIndex = 16;
+            // 
+            // btnRandID
+            // 
+            this.btnRandID.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRandID.ImageOptions.Image")));
+            this.btnRandID.Location = new System.Drawing.Point(201, 68);
+            this.btnRandID.Name = "btnRandID";
+            this.btnRandID.Size = new System.Drawing.Size(71, 27);
+            this.btnRandID.StyleController = this.layoutControl1;
+            this.btnRandID.TabIndex = 17;
+            this.btnRandID.Text = "Tạo ID";
+            this.btnRandID.Click += new System.EventHandler(this.btnRandID_Click);
             // 
             // Root
             // 
@@ -598,6 +609,15 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(12, 96);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.btnRandID;
+            this.layoutControlItem3.Location = new System.Drawing.Point(177, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(75, 31);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.gridControl1;
@@ -614,26 +634,6 @@
             this.emptySpaceItem8.Name = "emptySpaceItem8";
             this.emptySpaceItem8.Size = new System.Drawing.Size(721, 34);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // btnRandID
-            // 
-            this.btnRandID.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnRandID.Location = new System.Drawing.Point(201, 68);
-            this.btnRandID.Name = "btnRandID";
-            this.btnRandID.Size = new System.Drawing.Size(71, 27);
-            this.btnRandID.StyleController = this.layoutControl1;
-            this.btnRandID.TabIndex = 17;
-            this.btnRandID.Text = "Tạo ID";
-            this.btnRandID.Click += new System.EventHandler(this.btnRandID_Click);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.btnRandID;
-            this.layoutControlItem3.Location = new System.Drawing.Point(177, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(75, 31);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // teacherUI_
             // 
@@ -674,10 +674,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
