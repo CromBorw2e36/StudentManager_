@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraBars;
 using studentManager_GUI.UI;
 using studentManager_GUI.UI.classRoom;
+using studentManager_GUI.UI.studentsControl;
 using studentManager_GUI.UI.subject;
 using studentManager_GUI.UI.teacherControl;
 using System;
@@ -24,7 +25,7 @@ namespace studentManager_GUI
         ControlClassRoom classRoom = null;
         private void accordionControlElement7_Click(object sender, EventArgs e)
         {
-            if(classRoom == null)
+            if (classRoom == null)
             {
                 classRoom = new ControlClassRoom();
                 classRoom.Dock = DockStyle.Fill;
@@ -35,6 +36,8 @@ namespace studentManager_GUI
             {
                 classRoom.BringToFront();
             }
+            this.Text = "Trang chủ - Quản lý lớp học";
+
         }
 
         subjectUI_ subjectUI_ = null;
@@ -51,6 +54,8 @@ namespace studentManager_GUI
             {
                 subjectUI_.BringToFront();
             }
+            this.Text = "Trang chủ - Quản lý môn học";
+
         }
 
         teacherUI_ teacherUI_ = null;
@@ -67,6 +72,41 @@ namespace studentManager_GUI
             {
                 teacherUI_.BringToFront();
             }
+            this.Text = "Trang chủ - Quản lý giáo viên";
+
+        }
+
+        studentsUI_ studentsUI_ = null;
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+            if (studentsUI_ == null)
+            {
+                studentsUI_ = new studentsUI_();
+                studentsUI_.Dock = DockStyle.Fill;
+                fluentDesignFormContainer1.Controls.Add(studentsUI_);
+                studentsUI_.BringToFront();
+            }
+            else
+            {
+                studentsUI_.BringToFront();
+            }
+            this.Text = "Trang chủ - Quản lý học viên"; 
+        }
+
+        private void accordionControlElement10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement1_Click(object sender, EventArgs e)
+        {
+            this.Text = "Trang chủ";
+
         }
     }
 }

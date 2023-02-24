@@ -44,7 +44,7 @@
     <Compile Include="classRoomBUS.cs" />
     <Compile Include="facultyBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="students.cs" />
+    <Compile Include="studentsBUS.cs" />
     <Compile Include="subjectBUS.cs" />
     <Compile Include="teachBUS.cs" />
     <Compile Include="teacherBUS.cs" />
