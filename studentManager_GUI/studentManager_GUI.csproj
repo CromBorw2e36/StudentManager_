@@ -115,6 +115,12 @@
     <Compile Include="UI\classRoom\ControlClassRoom.Designer.cs">
       <DependentUpon>ControlClassRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\studentsControl\studentsUI_.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\studentsControl\studentsUI_.Designer.cs">
+      <DependentUpon>studentsUI_.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\subjectControl\DANH SÁCH MÔN HỌC.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </Compile>
     <EmbeddedResource Include="UI\classRoom\ControlClassRoom.resx">
       <DependentUpon>ControlClassRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\studentsControl\studentsUI_.resx">
+      <DependentUpon>studentsUI_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\subjectControl\DANH SÁCH MÔN HỌC.resx">
       <DependentUpon>DANH SÁCH MÔN HỌC.cs</DependentUpon>

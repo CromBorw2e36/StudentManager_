@@ -19,13 +19,13 @@ namespace studentManager_DTO
         [StringLength(5)]
         public string MAHOCVIEN { get; set; }
 
-        [StringLength(20)]
+        [StringLength(254)]
         public string HOHOCVIEN { get; set; }
 
-        [StringLength(20)]
+        [StringLength(254)]
         public string TENHOCVIEN { get; set; }
 
-        [Column(TypeName = "date")]
+        //[Column(TypeName = "date")]
         public DateTime? NGAYSINH { get; set; }
 
         [StringLength(100)]
@@ -34,7 +34,7 @@ namespace studentManager_DTO
         [StringLength(50)]
         public string SDT { get; set; }
 
-        [StringLength(50)]
+        [StringLength(250)]
         public string NGHENGHIEP { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
