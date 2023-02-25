@@ -159,11 +159,11 @@ namespace studentManager_GUI
 
         private void accordionControlElement1_Click(object sender, EventArgs e)
         {
-            if (!idAdmin(_user))
-            {
-                MessagePer();
-                return;
-            }
+            //if (!idAdmin(_user))
+            //{
+            //    MessagePer();
+            //    return;
+            //}
             this.Text = "Trang chủ";
             if (homePageControl == null)
             {

@@ -22,6 +22,10 @@ namespace studentManager_BUS
             (new teachDAL()).insTeach(dh);
         }
 
+        public GIAO_VIEN getTeacher(string magiaovien)
+        {
+            return (new teachDAL()).getTeacher(magiaovien);
+        }
         public void updTeach(string magiaovien, string monhoc, string subjectOld)
         {
             DAY_HOC dh = new DAY_HOC();

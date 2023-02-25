@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
 
 namespace studentManager_DAL
 {
@@ -18,6 +20,20 @@ namespace studentManager_DAL
                 count = context.MONHOC.Where(x=> x.MAMON == id).Count();
             }
             return count != 0 ? true : false;
+        }
+
+        public MONHOC getSubject(string id)
+        {
+            MONHOC monhoc = new MONHOC();
+            using (dbStudentManager context = new dbStudentManager())
+            {
+                var query = context.MONHOC.Where(x => x.MAMON == id).FirstOrDefault();
+                if(query != null)
+                {
+                    monhoc = query;
+                }
+            }
+            return null;
         }
 
         public string getID(string name)

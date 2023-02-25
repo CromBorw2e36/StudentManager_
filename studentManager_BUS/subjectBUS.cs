@@ -54,5 +54,10 @@ namespace studentManager_BUS
             return (new subjectDAL()).issetSubject(mamon);
         }
 
+        public MONHOC getSubject(string mamon)
+        {
+            return subjectDAL.getSubject(mamon);
+        }
+
     }
 }

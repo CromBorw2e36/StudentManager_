@@ -30,6 +30,20 @@ namespace studentManager_DAL
             }
         }
 
+        public GIAO_VIEN getTeacher(string magiaovien)
+        {
+            GIAO_VIEN giaovien = new GIAO_VIEN();
+            using (dbStudentManager context = new dbStudentManager())
+            {
+                var query  = context.GIAO_VIEN.Where(x=>x.MAGIAOVIEN == magiaovien).FirstOrDefault();
+                if(query != null)
+                {
+                    giaovien = query;
+                }
+            }
+            return giaovien;
+        }
+
         public void updTeach(DAY_HOC dh, string subjectOld)
         {
             try
