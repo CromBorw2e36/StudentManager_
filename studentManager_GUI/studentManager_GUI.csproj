@@ -191,6 +191,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\studentsReport_.resx">
+      <DependentUpon>studentsReport_.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\barcodeControl\barcodeControl_.resx">
       <DependentUpon>barcodeControl_.cs</DependentUpon>
     </EmbeddedResource>

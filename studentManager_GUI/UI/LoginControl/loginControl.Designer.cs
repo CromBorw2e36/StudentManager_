@@ -52,10 +52,10 @@
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::studentManager_GUI.UI.loadControl.loadFrom_), true, true);
-            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTK.Properties)).BeginInit();
@@ -78,9 +78,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -118,6 +118,7 @@
             this.textEditMK.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEditMK.Properties.Appearance.Options.UseFont = true;
             this.textEditMK.Properties.UseSystemPasswordChar = true;
+            this.textEditMK.Properties.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEditMK_Properties_KeyUp);
             this.textEditMK.Size = new System.Drawing.Size(265, 28);
             this.textEditMK.StyleController = this.layoutControl1;
             this.textEditMK.TabIndex = 5;
@@ -332,9 +333,13 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(269, 13);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // splashScreenManager1
+            // emptySpaceItem7
             // 
-            this.splashScreenManager1.ClosingDelay = 500;
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(229, 353);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(40, 20);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // simpleLabelItem1
             // 
@@ -346,13 +351,9 @@
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(225, 16);
             this.simpleLabelItem1.Click += new System.EventHandler(this.simpleLabelItem1_Click);
             // 
-            // emptySpaceItem7
+            // splashScreenManager1
             // 
-            this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(229, 353);
-            this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(40, 20);
-            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.splashScreenManager1.ClosingDelay = 500;
             // 
             // loginControl
             // 
@@ -386,9 +387,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }

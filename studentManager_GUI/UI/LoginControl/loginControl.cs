@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace studentManager_GUI.UI
 {
@@ -22,11 +23,9 @@ namespace studentManager_GUI.UI
             InitializeComponent();
         }
 
-        private void simpleButton11_Click(object sender, EventArgs e)
+
+        private void Login(string username, string password)
         {
-            string username = textEditTK.Text;
-            string password = textEditMK.Text;
-            
             splashScreenManager1.ShowWaitForm();
             if ((new usersBUS().issetUser(username, password)))
             {
@@ -42,10 +41,20 @@ namespace studentManager_GUI.UI
             else
             {
                 splashScreenManager1.CloseWaitForm();
-                MessageBox.Show("Đăng nhập không thành công","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Đăng nhập không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
+
+        private void simpleButton11_Click(object sender, EventArgs e)
+        {
+            string username = textEditTK.Text;
+            string password = textEditMK.Text;
+
+            Login(username, password);
+
+
+        }
+
 
         private void simpleLabelItem1_Click(object sender, EventArgs e)
         {
@@ -53,6 +62,18 @@ namespace studentManager_GUI.UI
             RegisterControl_ RegisterControl_ = (new RegisterControl_());
             splashScreenManager1.CloseWaitForm();
             RegisterControl_.ShowDialog();
+        }
+
+
+        private void textEditMK_Properties_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                string username = textEditTK.Text;
+                string password = textEditMK.Text;
+
+                Login(username, password);
+            }
         }
     }
 }
