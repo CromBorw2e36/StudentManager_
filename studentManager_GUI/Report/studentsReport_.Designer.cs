@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // studentsReport_
+            // 
+            this.Version = "21.2";
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+
         }
 
         #endregion

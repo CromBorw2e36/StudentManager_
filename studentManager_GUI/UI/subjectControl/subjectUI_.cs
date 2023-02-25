@@ -35,7 +35,7 @@ namespace studentManager_GUI.UI.subject
 
             sqlDataSource1.Fill();
 
-            string textID = (new _RandomID()).RandomString(5).ToString();
+            string textID = "MH" + (new _RandomID().RandomString(3));
             textEdit1.Text = textID;
         }
 
@@ -47,8 +47,7 @@ namespace studentManager_GUI.UI.subject
             textEdit1.Text = (sender as GridView).GetFocusedRowCellValue("MAMON").ToString();
             textEdit2.Text = (sender as GridView).GetFocusedRowCellValue("TENMON").ToString();
             textEdit3.Text = (sender as GridView).GetFocusedRowCellValue("HOCPHI").ToString();
-
-
+            barCodeControl1.Text = textEdit1.Text;
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -100,8 +99,9 @@ namespace studentManager_GUI.UI.subject
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            string textID = (new _RandomID()).RandomString(5).ToString();
+            string textID = "MH" + (new _RandomID().RandomString(3));
             textEdit1.Text = textID;
+            barCodeControl1.Text = textID;
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -140,8 +140,15 @@ namespace studentManager_GUI.UI.subject
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            subjectReport_ subjectReport_ = new subjectReport_();
-            subjectReport_.ShowPreview();
+            //subjectReport_ subjectReport_ = new subjectReport_();
+            //subjectReport_.ShowPreview();
+            comboBoxEdit1.SelectedIndex = 0;
+            textEdit1.Text = "MH"  + (new _RandomID().RandomString(3));
+            textEdit2.Text = "";
+            textEdit3.Text = "";
+            barCodeControl1.Text = textEdit1.Text;
+
+            sqlDataSource1.FillAsync();
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
@@ -204,6 +211,11 @@ namespace studentManager_GUI.UI.subject
         {
             subjectReport_ subjectReport_ = new subjectReport_();
             subjectReport_.ShowPreview();
+        }
+
+        private void textEdit1_Properties_KeyUp(object sender, KeyEventArgs e)
+        {
+            barCodeControl1.Text = textEdit1.Text;
         }
     }
 }

@@ -48,6 +48,8 @@
     <Compile Include="subjectBUS.cs" />
     <Compile Include="teachBUS.cs" />
     <Compile Include="teacherBUS.cs" />
+    <Compile Include="usersBUS.cs" />
+    <Compile Include="_md5.cs" />
     <Compile Include="_Validate.cs" />
     <Compile Include="_RandomID.cs" />
   </ItemGroup>

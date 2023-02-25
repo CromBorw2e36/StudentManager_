@@ -48,5 +48,10 @@ namespace studentManager_BUS
         {
             return teacher.issetTecher(magiaovien);
         }
+
+        public int CounterTeacher()
+        {
+            return teacher.CounterTeacher();
+        }
     }
 }

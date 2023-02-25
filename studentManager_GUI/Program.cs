@@ -1,6 +1,8 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
+using studentManager_GUI.UI;
+using studentManager_GUI.UI.LoginControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +20,9 @@ namespace studentManager_GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomePage());
+            //Application.Run(new RegisterControl_());
+            Application.Run(new loginControl());
+            //Application.Run(new HomePage());
         }
     }
 }

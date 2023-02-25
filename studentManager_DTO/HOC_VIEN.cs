@@ -25,7 +25,6 @@ namespace studentManager_DTO
         [StringLength(254)]
         public string TENHOCVIEN { get; set; }
 
-        //[Column(TypeName = "date")]
         public DateTime? NGAYSINH { get; set; }
 
         [StringLength(100)]

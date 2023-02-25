@@ -33,6 +33,7 @@ namespace studentManager_GUI.UI.teacherControl
 
             comboEditMONHOC.Properties.Items.AddRange(lst_subject);
             comboEditMONHOC.SelectedIndex = 0;
+            textEditMAGIAOVIEN.Text = "GV" + (new _RandomID()).RandomString(3);
         }
 
         public teacherUI_()
@@ -172,6 +173,8 @@ namespace studentManager_GUI.UI.teacherControl
             }
             subjectOld = (sender as GridView).GetFocusedRowCellValue("Tên môn học").ToString();
             comboEditMONHOC.SelectedItem = (sender as GridView).GetFocusedRowCellValue("Tên môn học").ToString();
+
+            barCodeControl1.Text = textEditMAGIAOVIEN.Text;
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -200,11 +203,13 @@ namespace studentManager_GUI.UI.teacherControl
             textEditDIACHI.Text = "";
             dateEditNGAYSINH.DateTime = DateTime.Now;
 
-            string textID = (new _RandomID()).RandomString(5);
+            string textID = "GV" + (new _RandomID()).RandomString(3);
             textEditMAGIAOVIEN.Text = textID;
             sqlDataSource1.FillAsync();
             comboEditMONHOC.Properties.Items.Clear();
             fillComboEdit();
+            barCodeControl1.Text= textID;
+            sqlDataSource1.FillAsync();
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -273,6 +278,12 @@ namespace studentManager_GUI.UI.teacherControl
         {
             string textID = (new _RandomID()).RandomString(5);
             textEditMAGIAOVIEN.Text= textID;
+            barCodeControl1.Text = textID;
+        }
+
+        private void textEditMAGIAOVIEN_KeyUp(object sender, KeyEventArgs e)
+        {
+            barCodeControl1.Text = textEditMAGIAOVIEN.Text;
         }
     }
 }
