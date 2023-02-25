@@ -31,6 +31,9 @@ namespace studentManager_GUI
         private DevExpress.XtraReports.UI.XRControlStyle ReportFooterBandStyle;
         private DevExpress.XtraReports.UI.XRControlStyle ReportOddStyle;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
+        private DevExpress.XtraReports.UI.XRBarCode xrBarCode1;
         private DevExpress.XtraReports.UI.XRControlStyle ReportEvenStyle;
 
         public DANHSÁCHHỌCVIÊN()
@@ -43,7 +46,9 @@ namespace studentManager_GUI
             this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DANHSÁCHHỌCVIÊN));
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.table1 = new DevExpress.XtraReports.UI.XRTable();
             this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -71,7 +76,9 @@ namespace studentManager_GUI
             this.ReportFooterBandStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.ReportOddStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.ReportEvenStyle = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrBarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -83,6 +90,20 @@ namespace studentManager_GUI
             this.TopMargin.Dpi = 254F;
             this.TopMargin.HeightF = 227F;
             this.TopMargin.Name = "TopMargin";
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Dpi = 254F;
+            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 128.3633F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(1592F, 58.41997F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "DANH SÁCH HỌC VIÊN";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // PageHeader
             // 
@@ -105,6 +126,7 @@ namespace studentManager_GUI
             // tableRow1
             // 
             this.tableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell1,
             this.tableCell1,
             this.tableCell2,
             this.tableCell3,
@@ -121,13 +143,14 @@ namespace studentManager_GUI
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell1.Dpi = 254F;
             this.tableCell1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell1.Multiline = true;
             this.tableCell1.Name = "tableCell1";
             this.tableCell1.StyleName = "ReportHeaderBandStyle";
             this.tableCell1.StylePriority.UseFont = false;
             this.tableCell1.StylePriority.UseTextAlignment = false;
             this.tableCell1.Text = "Mã học viên";
             this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell1.Weight = 0.42333336451544834D;
+            this.tableCell1.Weight = 0.28543542370164227D;
             // 
             // tableCell2
             // 
@@ -206,7 +229,7 @@ namespace studentManager_GUI
             this.table2});
             this.Detail.Dpi = 254F;
             this.Detail.EvenStyleName = "ReportEvenStyle";
-            this.Detail.HeightF = 63.5F;
+            this.Detail.HeightF = 103.7167F;
             this.Detail.HierarchyPrintOptions.Indent = 50.8F;
             this.Detail.Name = "Detail";
             this.Detail.OddStyleName = "ReportOddStyle";
@@ -219,11 +242,12 @@ namespace studentManager_GUI
             this.table2.Name = "table2";
             this.table2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.tableRow2});
-            this.table2.SizeF = new System.Drawing.SizeF(1592F, 63.5F);
+            this.table2.SizeF = new System.Drawing.SizeF(1592F, 103.7167F);
             // 
             // tableRow2
             // 
             this.tableRow2.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell2,
             this.tableCell7,
             this.tableCell8,
             this.tableCell9,
@@ -241,14 +265,14 @@ namespace studentManager_GUI
             this.tableCell7.EvenStyleName = "ReportEvenStyle";
             this.tableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Mã học viên]")});
-            this.tableCell7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell7.Name = "tableCell7";
             this.tableCell7.OddStyleName = "ReportOddStyle";
             this.tableCell7.StyleName = "ReportDetailBandStyle";
             this.tableCell7.StylePriority.UseFont = false;
             this.tableCell7.StylePriority.UseTextAlignment = false;
             this.tableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell7.Weight = 0.42333336451544834D;
+            this.tableCell7.Weight = 0.28543542370164227D;
             this.tableCell7.WordWrap = false;
             // 
             // tableCell8
@@ -258,7 +282,8 @@ namespace studentManager_GUI
             this.tableCell8.EvenStyleName = "ReportEvenStyle";
             this.tableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Họ và tên]")});
-            this.tableCell8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell8.Multiline = true;
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.OddStyleName = "ReportOddStyle";
             this.tableCell8.StyleName = "ReportDetailBandStyle";
@@ -266,7 +291,6 @@ namespace studentManager_GUI
             this.tableCell8.StylePriority.UseTextAlignment = false;
             this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell8.Weight = 0.42333336451544834D;
-            this.tableCell8.WordWrap = false;
             // 
             // tableCell9
             // 
@@ -275,7 +299,7 @@ namespace studentManager_GUI
             this.tableCell9.EvenStyleName = "ReportEvenStyle";
             this.tableCell9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngày sinh]")});
-            this.tableCell9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell9.Font = new System.Drawing.Font("Times New Roman", 10.2F);
             this.tableCell9.Name = "tableCell9";
             this.tableCell9.OddStyleName = "ReportOddStyle";
             this.tableCell9.StyleName = "ReportDetailBandStyle";
@@ -293,9 +317,11 @@ namespace studentManager_GUI
             this.tableCell10.EvenStyleName = "ReportEvenStyle";
             this.tableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Địa chỉ]")});
+            this.tableCell10.Font = new System.Drawing.Font("Times New Roman", 10.2F);
             this.tableCell10.Name = "tableCell10";
             this.tableCell10.OddStyleName = "ReportOddStyle";
             this.tableCell10.StyleName = "ReportDetailBandStyle";
+            this.tableCell10.StylePriority.UseFont = false;
             this.tableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.tableCell10.Weight = 0.42333336451544834D;
             this.tableCell10.WordWrap = false;
@@ -307,7 +333,7 @@ namespace studentManager_GUI
             this.tableCell11.EvenStyleName = "ReportEvenStyle";
             this.tableCell11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Số điện thoại]")});
-            this.tableCell11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell11.Font = new System.Drawing.Font("Times New Roman", 10.2F);
             this.tableCell11.Name = "tableCell11";
             this.tableCell11.OddStyleName = "ReportOddStyle";
             this.tableCell11.StyleName = "ReportDetailBandStyle";
@@ -325,9 +351,11 @@ namespace studentManager_GUI
             this.tableCell12.EvenStyleName = "ReportEvenStyle";
             this.tableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Nghề nghiệp]")});
+            this.tableCell12.Font = new System.Drawing.Font("Times New Roman", 10.2F);
             this.tableCell12.Name = "tableCell12";
             this.tableCell12.OddStyleName = "ReportOddStyle";
             this.tableCell12.StyleName = "ReportDetailBandStyle";
+            this.tableCell12.StylePriority.UseFont = false;
             this.tableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.tableCell12.Weight = 0.42333336451544834D;
             this.tableCell12.WordWrap = false;
@@ -393,19 +421,52 @@ namespace studentManager_GUI
             this.ReportEvenStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 254F);
             this.ReportEvenStyle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrLabel1
+            // xrTableCell1
             // 
-            this.xrLabel1.Dpi = 254F;
-            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 128.3633F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(1592F, 58.41997F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "DANH SÁCH HỌC VIÊN";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell1.Dpi = 254F;
+            this.xrTableCell1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell1.Multiline = true;
+            this.xrTableCell1.Name = "xrTableCell1";
+            this.xrTableCell1.StyleName = "ReportHeaderBandStyle";
+            this.xrTableCell1.StylePriority.UseFont = false;
+            this.xrTableCell1.StylePriority.UseTextAlignment = false;
+            this.xrTableCell1.Text = "BAR CODE";
+            this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell1.Weight = 0.56123130532925436D;
+            // 
+            // xrTableCell2
+            // 
+            this.xrTableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrBarCode1});
+            this.xrTableCell2.Dpi = 254F;
+            this.xrTableCell2.EvenStyleName = "ReportEvenStyle";
+            this.xrTableCell2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell2.Multiline = true;
+            this.xrTableCell2.Name = "xrTableCell2";
+            this.xrTableCell2.OddStyleName = "ReportOddStyle";
+            this.xrTableCell2.StyleName = "ReportDetailBandStyle";
+            this.xrTableCell2.StylePriority.UseFont = false;
+            this.xrTableCell2.StylePriority.UseTextAlignment = false;
+            this.xrTableCell2.Text = "xrTableCell2";
+            this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell2.Weight = 0.56123130532925436D;
+            // 
+            // xrBarCode1
+            // 
+            this.xrBarCode1.AutoModule = true;
+            this.xrBarCode1.Dpi = 254F;
+            this.xrBarCode1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Mã học viên]")});
+            this.xrBarCode1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrBarCode1.Name = "xrBarCode1";
+            this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 96F);
+            this.xrBarCode1.SizeF = new System.Drawing.SizeF(301.5118F, 103.7167F);
+            this.xrBarCode1.StylePriority.UseFont = false;
+            this.xrBarCode1.Symbology = code128Generator1;
             // 
             // DANHSÁCHHỌCVIÊN
             // 

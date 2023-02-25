@@ -60,5 +60,10 @@ namespace studentManager_BUS
         {
             return studentsDAL.CounterStudent();
         }
+
+        public HOC_VIEN getStudent(string mahocvien)
+        {
+            return studentsDAL.getStudent(mahocvien);
+        }
     }
 }

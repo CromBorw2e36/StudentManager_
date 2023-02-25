@@ -115,6 +115,12 @@
     <Compile Include="Report\teacherReport_.Designer.cs">
       <DependentUpon>teacherReport_.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\barcodeControl\barcodeControl_.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\barcodeControl\barcodeControl_.Designer.cs">
+      <DependentUpon>barcodeControl_.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\classRoom\ControlClassRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     </Compile>
     <Compile Include="UI\LoginControl\loginControl.Designer.cs">
       <DependentUpon>loginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoginControl\RegisterControl_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoginControl\RegisterControl_.Designer.cs">
+      <DependentUpon>RegisterControl_.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\studentsControl\DANH SÁCH HỌC VIÊN.cs">
       <SubType>Component</SubType>
@@ -179,6 +191,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\barcodeControl\barcodeControl_.resx">
+      <DependentUpon>barcodeControl_.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\classRoom\ControlClassRoom.resx">
       <DependentUpon>ControlClassRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginControl\loginControl.resx">
       <DependentUpon>loginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginControl\RegisterControl_.resx">
+      <DependentUpon>RegisterControl_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\studentsControl\DANH SÁCH HỌC VIÊN.resx">
       <DependentUpon>DANH SÁCH HỌC VIÊN.cs</DependentUpon>

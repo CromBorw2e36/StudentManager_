@@ -101,5 +101,19 @@ namespace studentManager_DAL
             }
             return counter;
         }
+
+        public HOC_VIEN getStudent(string mahociven)
+        {
+            HOC_VIEN hocvien  = new HOC_VIEN();
+            using (dbStudentManager context = new dbStudentManager())
+            {
+                var query = context.HOC_VIEN.Where(x => x.MAHOCVIEN == mahociven).FirstOrDefault();
+                if(query != null)
+                {
+                    hocvien = query;
+                }
+            }
+            return hocvien;
+        }
     }
 }

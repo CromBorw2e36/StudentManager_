@@ -27,6 +27,7 @@ namespace studentManager_DTO
         public virtual DbSet<MONHOC> MONHOC { get; set; }
         public virtual DbSet<PHONGHOC> PHONGHOC { get; set; }
         public virtual DbSet<THI> THI { get; set; }
+        public virtual DbSet<USERS> USERS { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -79,6 +80,22 @@ namespace studentManager_DTO
                 .HasMany(e => e.THI)
                 .WithRequired(e => e.PHONGHOC)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<USERS>()
+                .Property(e => e.id)
+                .IsFixedLength();
+
+            modelBuilder.Entity<USERS>()
+                .Property(e => e.username)
+                .IsFixedLength();
+
+            modelBuilder.Entity<USERS>()
+                .Property(e => e.password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<USERS>()
+                .Property(e => e.email)
+                .IsFixedLength();
         }
     }
 }

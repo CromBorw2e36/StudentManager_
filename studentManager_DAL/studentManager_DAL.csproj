@@ -59,6 +59,7 @@
     <Compile Include="subjectDAL.cs" />
     <Compile Include="teachDAL.cs" />
     <Compile Include="teacherDAL.cs" />
+    <Compile Include="usersDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\studentManager_DTO\studentManager_DTO.csproj">
