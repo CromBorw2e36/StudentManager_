@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "studentManager_DAL", "stude
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "studentManager_BUS", "studentManager_BUS\studentManager_BUS.csproj", "{B43DC181-03F2-4885-980C-C19C77624D50}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{B616FFD2-38BE-41C8-A175-1B0926A5C867}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{B43DC181-03F2-4885-980C-C19C77624D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B43DC181-03F2-4885-980C-C19C77624D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B43DC181-03F2-4885-980C-C19C77624D50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B616FFD2-38BE-41C8-A175-1B0926A5C867}.Debug|Any CPU.ActiveCfg = Debug
+		{B616FFD2-38BE-41C8-A175-1B0926A5C867}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

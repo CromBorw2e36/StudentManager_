@@ -26,6 +26,23 @@ namespace studentManager_BUS
             return - 1;
         }
 
+        public int ValidateEmail(string email)
+        {
+            if (email != null)
+            {
+                Regex regex = new Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+                if(regex.IsMatch(email))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            return 1;
+        }
+
         public int ValidateNumber(string text)
         {
             if(text.Length == 10)

@@ -17,6 +17,8 @@ namespace studentManager_GUI.UI.LoginControl
         public RegisterControl_()
         {
             InitializeComponent();
+
+            comboEditPer.SelectedIndex = 0;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -26,23 +28,41 @@ namespace studentManager_GUI.UI.LoginControl
             string taikhoan = textEditTK.Text;
             string matkhau = textEditMK.Text;
             bool per = comboEditPer.Text == "Quản trị viên";
-
+            string email = textEditEmail.Text;
             if(
                 ho != "" &&
                 ten != "" &&
                 taikhoan != "" &&
-                matkhau != ""
+                matkhau != "" &&
+                email != ""
                 )
             {
-                splashScreenManager1.ShowWaitForm();
-                (new usersBUS()).insUser(taikhoan, matkhau, ho, ten, per);
-                splashScreenManager1.CloseWaitForm();
 
-                DialogResult = MessageBox.Show("Đăng kí tài khoản thành công \n Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (DialogResult == DialogResult.OK)
+                if((new _Validate()).ValidateEmail(email) == 0)
                 {
-                    this.Dispose();
+                    splashScreenManager1.ShowWaitForm();
+                    (new usersBUS()).insUser(taikhoan, matkhau, ho, ten, email, per);
+                    splashScreenManager1.CloseWaitForm();
+
+                    DialogResult = MessageBox.Show("Đăng kí tài khoản thành công \n Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (DialogResult == DialogResult.OK)
+                    {
+                        this.Dispose();
+                    }
                 }
+                else
+                {
+                    if ((new _Validate()).ValidateEmail(email) == -1)
+                    {
+                        DialogResult = MessageBox.Show("Vui lòng đúng thông tin email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        DialogResult = MessageBox.Show("Vui lòng nhập thông tin email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+
             }
             else
             {

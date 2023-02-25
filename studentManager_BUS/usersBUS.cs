@@ -11,7 +11,7 @@ namespace studentManager_BUS
     public class usersBUS
     {
         usersDAL usersDAL = new usersDAL();
-        public void insUser(string username, string password, string ho, string ten, bool per)
+        public void insUser(string username, string password, string ho, string ten, string email,bool per)
         {
             string _id = "USER_" + (new _RandomID()).RandomString(5);
             string _password = (new _md5()).MD5Hash(password);
@@ -19,7 +19,8 @@ namespace studentManager_BUS
             uSERS.id = _id;
             uSERS.username = username;
             uSERS.password = _password;
-            uSERS.email = per == true ? "admin@qlhv.com" : "user@qlhv.com";
+            //uSERS.email = per == true ? "admin@qlhv.com" : "user@qlhv.com";
+            uSERS.email = email;
             uSERS.ho = ho;
             uSERS.ten = ten;
             uSERS.permission = per;
