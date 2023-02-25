@@ -276,7 +276,7 @@ namespace studentManager_GUI.UI.teacherControl
 
         private void btnRandID_Click(object sender, EventArgs e)
         {
-            string textID = (new _RandomID()).RandomString(5);
+            string textID = "GV" + (new _RandomID()).RandomString(3);
             textEditMAGIAOVIEN.Text= textID;
             barCodeControl1.Text = textID;
         }
