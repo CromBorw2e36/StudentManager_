@@ -44,8 +44,8 @@ namespace studentManager_GUI.UI.LoginControl
                     (new usersBUS()).insUser(taikhoan, matkhau, ho, ten, email, per);
                     splashScreenManager1.CloseWaitForm();
 
-                    DialogResult = MessageBox.Show("Đăng kí tài khoản thành công \n Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (DialogResult == DialogResult.OK)
+                    DialogResult result = MessageBox.Show("Đăng kí tài khoản thành công \n Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
                         this.Dispose();
                     }
@@ -54,11 +54,11 @@ namespace studentManager_GUI.UI.LoginControl
                 {
                     if ((new _Validate()).ValidateEmail(email) == -1)
                     {
-                        DialogResult = MessageBox.Show("Vui lòng đúng thông tin email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                       MessageBox.Show("Vui lòng đúng thông tin email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        DialogResult = MessageBox.Show("Vui lòng nhập thông tin email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Vui lòng nhập thông tin email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
@@ -66,7 +66,7 @@ namespace studentManager_GUI.UI.LoginControl
             }
             else
             {
-                DialogResult = MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
