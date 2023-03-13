@@ -1,11 +1,12 @@
 # StudentManager_
 
 ## Create student manager
--- windows form
+-- window form
 
--- using devexpress
+-- use devexpress
 
 -- use Entity
 
 -- use three-layer
 
+## Dev OBJ ADVANCED - DTHU
